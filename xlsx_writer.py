@@ -4,18 +4,18 @@ from typing import Dict
 
 
 def initialize_xlsx():
-    workbook = xlsxwriter.Workbook('Result.xlsx')
-    worksheet = workbook.add_worksheet('Result')
+    workbook = xlsxwriter.Workbook("Result.xlsx")
+    worksheet = workbook.add_worksheet("Result")
 
     return workbook, worksheet
 
 
 def add_headers(worksheet):
     headers = [
-        'Title',
-        'Country',
-        'Region',
-        'Ingredients',
+        "Title",
+        "Country",
+        "Region",
+        "Ingredients",
     ]
 
     row = 0
@@ -29,10 +29,10 @@ def add_headers(worksheet):
 
 def write_row(worksheet, data: Dict, row: int, col: int):
     data = [
-        data['title'],
-        data['country'],
-        data['region'],
-        "\n".join(data['ingredients']),
+        data["title"],
+        data["country"],
+        data["region"],
+        "\n".join(data["ingredients"]),
     ]
 
     for fields in data:
